@@ -5,35 +5,49 @@ const prisma = new PrismaClient();
 async function main() {
   const todos = [
     {
-      title: "Finish React project",
+      title: "Hold it now and watch the hoodwink",
       color: "blue",
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
-      title: "Buy groceries",
+      title: "Summon fish to the dish",
       color: "green",
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
-      title: "Read a new book",
+      title: "bust rhymes",
       color: "red",
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
-      title: "Plan weekend trip",
+      title: "Make a break and take a fake",
       color: "yellow",
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
-      title: "Learn TypeScript basics",
+      title: "sign a waiver",
+      color: "purple",
+      completed: Math.random() < 0.5, // Random boolean
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      title: "wear my mind on my sleeve",
+      color: "cyan",
+      completed: Math.random() < 0.5, // Random boolean
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      title: "take off my shirt",
       color: "purple",
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
