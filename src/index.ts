@@ -1,5 +1,5 @@
-import { PrismaClient } from "@prisma/client";
 import express, { Request, Response } from "express";
+import cors from "cors";
 import {
   createTask,
   deleteTask,
@@ -22,10 +22,20 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/tasks", async (_req: Request, res: Response) => {
   const tasks = await getTasks();
   res.json(tasks);
+});
+app.get("/tasks/:id", async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const taskId = parseInt(id);
+
+  const tasks = await getTasks();
+  const task = tasks.find((task) => task.id === taskId);
+
+  res.json(task);
 });
 
 app.post(
@@ -54,7 +64,6 @@ app.put("/tasks/:id", async (req: Request, res: Response) => {
   const { id } = req.params;
   const taskId = parseInt(id);
   const { title, color, completed } = req.body;
-
   try {
     let updatedTask;
 
@@ -73,7 +82,6 @@ app.put("/tasks/:id", async (req: Request, res: Response) => {
         error: `no valid update provided. one of title, color, or completed status needed`,
       });
     }
-    console.log(updatedTask);
     return res.json(updatedTask);
   } catch (err) {
     console.error(err);

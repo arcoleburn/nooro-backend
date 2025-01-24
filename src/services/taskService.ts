@@ -2,9 +2,7 @@ import { Todo } from "..";
 import prisma from "../prisma/prismaClient";
 
 export const getTasks = async () => {
-  console.log("get tasks hit!");
   const tasks = await prisma.todo.findMany();
-  console.log(tasks);
   return tasks;
 };
 
@@ -12,7 +10,6 @@ export const createTask = async ({
   title,
   color,
 }: Pick<Todo, "title" | "color">) => {
-  console.log("hit task service, create task");
   const newTodo = await prisma.todo.create({
     data: {
       title,

@@ -1,54 +1,63 @@
 import { PrismaClient } from "@prisma/client";
-
+export const colors = [
+  "bg-red-500",
+  "bg-yellow-500",
+  "bg-green-500",
+  "bg-blue-500",
+  "bg-indigo-500",
+  "bg-purple-500",
+  "bg-pink-500",
+  "bg-amber-700",
+];
 const prisma = new PrismaClient();
 
 async function main() {
   const todos = [
     {
       title: "Hold it now and watch the hoodwink",
-      color: "blue",
+      color: colors[Math.floor(Math.random() * colors.length)],
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       title: "Summon fish to the dish",
-      color: "green",
+      color: colors[Math.floor(Math.random() * colors.length)],
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       title: "bust rhymes",
-      color: "red",
+      color: colors[Math.floor(Math.random() * colors.length)],
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       title: "Make a break and take a fake",
-      color: "yellow",
+      color: colors[Math.floor(Math.random() * colors.length)],
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       title: "sign a waiver",
-      color: "purple",
+      color: colors[Math.floor(Math.random() * colors.length)],
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       title: "wear my mind on my sleeve",
-      color: "cyan",
+      color: colors[Math.floor(Math.random() * colors.length)],
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       title: "take off my shirt",
-      color: "purple",
+      color: colors[Math.floor(Math.random() * colors.length)],
       completed: Math.random() < 0.5, // Random boolean
       createdAt: new Date(),
       updatedAt: new Date(),
